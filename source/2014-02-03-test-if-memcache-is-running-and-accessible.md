@@ -3,7 +3,7 @@ title: Test if memcache is running and accessible
 date: 2014-02-03
 ---
 
-I've been writing a Rails template for our future projects at [Brightbit](http://brightbit.com) and I've been testing everything, including our application's environment. I've [wrote a special rake task](http://brightbit.com/blog/#TODO:ADD LINK TO BLOG POST) to test our different environments (development, test, staging, production, etc). This helps us ensure each environment is configured correctly. Ideally it would let the person running the tests know what is wrong with their environment and how to resolve it.
+I've been writing a Rails template for our future projects at [Brightbit](http://brightbit.com) and I've been testing everything, including our application's environment. I've wrote a special rake task to test our different environments (development, test, staging, production, etc). This helps us ensure each environment is configured correctly. Ideally it would let the person running the tests know what is wrong with their environment and how to resolve it.
 
 One of the environment details I wanted to test was that memcache was setup and running correctly. I could of course test for the memcached binary or check if it was running, but since we are running these tests in the context of a Rails app, why not just ask Rails if it can connect to the memcache server?
 
