@@ -1,0 +1,263 @@
+html
+  -webkit-font-smoothing: antialiased
+
+body
+  color: #222222
+  font-size: 22px
+  font-family: 'Open sans', sans-serif
+  font-weight: 400
+  line-height: 1.5em
+  padding: 0 10px
+
+@media all and (max-width: 660px)
+  body
+    font-size: 18px
+    line-height: 1.6em
+
+input
+  line-height: 1em
+
+a
+  color: #0881b3
+  text-decoration: none
+  border-bottom: 1px solid transparent
+  &:hover
+    -webkit-transition-property: border
+    -moz-transition-property: border
+    transition-property: border
+    -webkit-transition-duration: 0.2s
+    -moz-transition-duration: 0.2s
+    transition-duration: 0.2s
+    border-bottom: 1px solid
+
+strong
+  font-weight: 600
+  font-style: normal
+
+mark
+  background-color: #fffeca
+  padding: 0 0.1em
+
+i
+  font-style: italic
+
+abbr
+  border-bottom: 1px dashed
+  cursor: help
+
+p
+  margin: 0 0 1.5em
+
+hr
+  margin: 0 auto 2em
+  border: 0
+  border-bottom: 1px solid #ddd
+  width: 60%
+
+blockquote
+  border-left: 5px solid #ddd
+  color: #888
+  margin: 0 0 1em
+  padding-left: 1em
+  a
+    color: #444
+    &:hover
+      color: #0881b3
+
+code
+  display: inline-block
+  max-width: 95%
+  overflow-x: auto
+  white-space: nowrap
+  margin: 0 2px
+  padding: 0 5px
+  border: 1px solid #ddd
+  background-color: #f8f8f8
+  border-radius: 3px
+  line-height: 1.25em
+
+pre
+  margin: 0 0 1.5em 0.1em
+  padding: 0 0.3em 0 0.3em
+  background-color: #f8f8f8
+  overflow-x: auto
+  word-wrap: normal
+  white-space: pre
+
+pre > code
+  white-space: pre
+  margin: 0
+  padding: 0
+  border: 0
+  background-color: transparent
+
+small
+  font-size: 0.8em
+  color: #999
+  margin-left: 0.2em
+  a
+    color: #444
+    &:hover
+      color: #2e80d3
+
+h1
+  color: #000
+  font-size: 1.75em
+  margin-bottom: 0.5em
+  font-family: 'Open sans', sans-serif
+  font-weight: 400
+  text-transform: capitalize
+  line-height: 1.2em
+
+body > header h1
+  display: block
+  text-align: center
+
+body > header h1 a
+  color: #0096c8
+  border: 0
+  &:hover
+    color: #0096c8
+    border: 0
+
+h2
+  font-size: 1.3em
+  font-weight: 600
+  a
+    color: #222222
+    border: 0
+
+h3
+  font-weight: 600
+  color: #999
+  a
+    color: #999
+    border: 0
+
+h4
+  color: #999
+  font-weight: 600
+  margin-bottom: 0.2em
+
+body
+  >
+    header, section, footer
+      max-width: 800px
+      margin: 0 auto
+    header
+      color: #949494
+      margin: 4em auto
+      p
+        margin: 0
+    footer
+      color: #aaa
+      text-shadow: #fff 0 1px 0
+      font-size: 0.8em
+      text-align: center
+      margin: 3em auto
+      a
+        color: #aaa
+        &:hover
+          color: #0881b3
+      li
+        margin-right: 1em
+        display: inline-block
+        &:last-child
+          margin-right: 0
+  &.error
+    background: #f6291d
+    color: #fff
+    div#error
+      max-width: 640px
+      margin: 2em auto
+    h1
+      color: #fff
+    a
+      color: #fff
+      border-bottom: 1px solid
+
+@media all and (max-width: 660px)
+  body > header
+    margin: 2em auto 3em
+    p:nth-child(2)
+      margin-bottom: 1em
+
+article
+  margin-bottom: 2em
+  p
+    margin-right: 0.25em
+  blockquote
+    display: inline
+    margin-right: 0.25em
+    color: #222222
+    padding: 0
+    border: 0
+  img, object
+    display: none
+
+div.row-wide
+  box-shadow: rgba(0, 0, 0, 0.5) 0 0 3px
+  width: 100%
+  height: 200px
+  margin: 0 auto 40px
+  position: relative
+  a
+    &.title
+      text-indent: 100%
+      white-space: nowrap
+      overflow: hidden
+      display: block
+      width: 300px
+      height: 200px
+      border: 0
+    &.screenshot
+      text-indent: 100%
+      white-space: nowrap
+      overflow: hidden
+      position: absolute
+      bottom: 0
+      right: 0
+      padding: 0
+      width: 340px
+      height: 200px
+      border: 0
+
+@media all and (max-width: 660px)
+  div.row-wide
+    margin-bottom: 1em
+    width: 300px
+
+@media all and (max-width: 660px)
+  div.row-wide a.screenshot
+    display: none
+
+.bordered-image
+  display: block
+  border: 5px solid #fff
+  box-shadow: rgba(0, 0, 0, 0.5) 0 0 3px
+  background: #fff no-repeat
+  &:hover
+    box-shadow: black 0 0 3px
+
+a.twitter-username:before
+  content: "@"
+
+section.server-error
+  margin-bottom: 3em
+
+span.gray
+  color: #777
+
+ul.list, ol.list
+  margin: 0 0 2em 0.5em
+
+ul.list li, ol.list li
+  margin-left: 1em
+
+ul.list li
+  list-style: disc
+
+ol.list li
+  list-style: decimal
+  ol li
+    list-style: lower-alpha

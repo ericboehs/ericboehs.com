@@ -1,10 +1,26 @@
 ---
-title: Welcome to Middleman
+pageable: true
+per_page: 10
 ---
+<% if paginate && num_pages > 1 %>
+  <p>Page <%= page_number %> of <%= num_pages %></p>
 
-<div class="welcome">
-  <h1>Middleman is Watching</h1>
-  <p class="doc">
-    <%= link_to "Read Online Documentation", "http://middlemanapp.com/" %>
-  </p><!-- .doc -->
-</div><!-- .welcome -->
+  <% if prev_page %>
+    <p><%= link_to 'Previous page', prev_page %></p>
+  <% end %>
+<% end %>
+
+<% page_articles.each_with_index do |article, i| %>
+  <h1><%= link_to article.title, article %></h1>
+  <p><%= article.date.strftime('%b %e, %Y') %></p>
+  <article class="post">
+    <%= article.summary %>
+    <%= link_to 'Read more…', article %>
+  </article>
+<% end %>
+
+<% if paginate %>
+  <% if next_page %>
+    <p><%= link_to 'Next page', next_page %></p>
+  <% end %>
+<% end %>

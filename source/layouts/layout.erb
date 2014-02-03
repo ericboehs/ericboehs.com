@@ -1,19 +1,44 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
-    
-    <!-- Always force latest IE rendering engine or request Chrome Frame -->
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    
-    <!-- Use title if it's in the page YAML frontmatter -->
-    <title><%= current_page.data.title || "The Middleman" %></title>
-    
+    <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+    <link rel="me" href="http://www.google.com/profiles/ericboehs">
+    <%# <link rel="author" type="text/plain" href="/humans.txt"> %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta property="og:site_name" content="ericboehs.com">
+
+    <title><%= current_page.data.title || "Eric Boehs" %></title>
     <%= stylesheet_link_tag "normalize", "all" %>
-    <%= javascript_include_tag  "all" %>
   </head>
-  
+
   <body class="<%= page_classes %>">
-    <%= yield %>
+    <header>
+      <h1><a href="/" rel="home">Eric Boehs</a></h1>
+    </header>
+    <section class="home">
+      <% if current_article %>
+        <h1 class="post-title"><%= current_article.title %></h1>
+        <p><%= current_article.date.strftime('%b %e, %Y') %></p>
+        <article class="post">
+          <%= yield %>
+        </article>
+        <p><a href="/">Home</a></p>
+      <% else %>
+        <%= yield %>
+      <% end %>
+    </section>
+    <footer>
+      <p>
+        All articles authored by Eric Boehs<br>
+        <a href="mailto:eric+ebblog@brightbit.com">Hire me</a> for Ruby, web and iOS development
+      </p>
+    </footer>
+    <%= javascript_include_tag "all" %>
+    <%= javascript_include_tag "highlight.pack" %>
+    <script>hljs.initHighlightingOnLoad()</script>
+    <%= stylesheet_link_tag "solarized_light" %>
+    <%#TODO: Add google analytics %>
   </body>
 </html>
