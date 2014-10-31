@@ -7,7 +7,7 @@ body
   font-family: 'Open sans', sans-serif
   font-weight: 400
   line-height: 1.5em
-  padding: 0 10px
+  padding: 0
 
 @media all and (max-width: 660px)
   body
@@ -46,7 +46,11 @@ abbr
   cursor: help
 
 p
-  margin: 0 0 1.5em
+  margin-bottom: 1.5em
+
+p, h1, h2, h3, h4, h5, h6, ul, ol
+  width: 800px
+  margin: 0 auto 0.5em auto
 
 hr
   margin: 0 auto 2em
@@ -67,7 +71,7 @@ blockquote
 code
   display: inline-block
   max-width: 95%
-  overflow-x: auto
+  overflow-x: hidden
   white-space: nowrap
   margin: 0 2px
   padding: 0 5px
@@ -75,11 +79,10 @@ code
   background-color: #f8f8f8
   border-radius: 3px
   line-height: 1.25em
-  vertical-align: -0.30em
 
 pre
-  margin: 0 0 1.5em 0.1em
-  padding: 0 0.3em 0 0.3em
+  margin: 0 0 1.5em 0
+  padding: 0 1em 0 1em
   background-color: #f8f8f8
   word-wrap: normal
   white-space: pre
@@ -89,7 +92,7 @@ pre > code
   max-width: 100%
   white-space: pre
   margin: 0
-  padding: 0 0 0.1em 0
+  padding: 0.75em 0 0.75em 0
   border: 0
   background-color: transparent
 
@@ -105,7 +108,6 @@ small
 h1
   color: #000
   font-size: 1.75em
-  margin-bottom: 0.5em
   font-family: 'Open sans', sans-serif
   font-weight: 400
   text-transform: capitalize
@@ -143,7 +145,7 @@ h4
 
 body
   >
-    header, section, footer
+    header, footer
       max-width: 800px
       margin: 0 auto
     header
@@ -151,6 +153,11 @@ body
       margin: 4em auto
       p
         margin: 0
+
+    section
+      width: 100%
+      margin: 0 auto
+
     footer
       color: #aaa
       text-shadow: #fff 0 1px 0
@@ -186,8 +193,6 @@ body
 
 article
   margin-bottom: 2em
-  p
-    margin-right: 0.25em
   blockquote
     display: inline
     margin-right: 0.25em
