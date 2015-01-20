@@ -62,7 +62,7 @@ Note: If you're testing remotely you will need an SSH or VPN tunnel.
 - Logs can be viewed in `log/development.log`. A useful alias for this is:
 
 ```sh
-alias devlogs='tail -f ~/Code/*/*/log/development.log' # May need to change the path
+alias devlogs='tail -f ~/Code/*/*/log/development.log' # May need to change path
 ```
 
 - Restart the application using:
