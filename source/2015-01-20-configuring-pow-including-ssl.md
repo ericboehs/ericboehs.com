@@ -12,32 +12,32 @@ Pow is a daemon that runs your rack (Rails) apps in the background when you requ
 ## Install Pow
 
 - Before running the install script, configure pow to use port `3300` rather than `80`; this makes port forwarding easier and avoids unnecessary sudoing. You may prefer to skip this step or choose another port besides `3300`.
-```bash
+```
 echo 'export POW_DST_PORT=3300' >> ~/.powconfig
 ```
 
 - Run the [pow](http://pow.cx) install script and configure pow to serve your app
-```bash
+```
 curl get.pow.cx | sh
 cd ~/.pow
 ln -s ~/Code/example_co/example_app # Or where ever your repo is
 ```
 - Ensure your application is running:
-```bash
+```
 open http://example_app.dev:3300
 ```
 
 ## Configure SSL with tunnelss
 - Install [tunnelss](https://github.com/rchampourlier/tunnelss) on your system:
-```bash
+```
 gem install tunnelss
 ```
 - Start tunnelss (I recommend 4430 as it does not require `sudo`):
-```bash
+```
 tunnelss 4430 3300 # Change port 3300 if you changed DST_PORT (80 is default)
 ```
 - Open the SSL URL to the app:
-```bash
+```
 open https://example_app.dev:4430
 ```
 - Trust the "unverified" self-signed certificate when prompted (should require admin password). [Screenshot for Safari](https://cloud.githubusercontent.com/assets/28198/5825515/9d33e926-a0b1-11e4-8fa2-8fb5157b2e86.png).
@@ -52,16 +52,16 @@ Note: If you're testing remotely you will need an SSH or VPN tunnel.
 
 ## Logs, restarting, pry and misc
 - Logs can be viewed in `log/development.log`. A useful alias for this is:
-```bash
+```
 alias devlogs='tail -f ~/Code/*/*/log/development.log' # May need to change the path
 ```
 - Restart the application using:
-```bash
+```
 touch tmp/restart.txt # Will restart on next page load
 ```
 As usual, Rails handles much of the code reloading for you so you won't have to do this with every request. Just the typical reasons you'd need to restart the server for (modifying initializers, adding gems, modifying load paths, etc).
 - Since [pry](http://pryrepl.org) isn't connected to a tty, you won't be able to start a debugger from your code the normal way (`binding.pry`). [pry-remote](https://github.com/Mon-Ouie/pry-remote) has our back. Use `binding.remote_pry` in your code and then run `pry-remote`. This will attach your terminal to the pry debugging session.
-```bash
+```
 binding.remote_pry # In your code
 pry-remote # In your shell
 ```
