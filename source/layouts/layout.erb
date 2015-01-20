@@ -36,7 +36,26 @@
       </p>
     </footer>
     <%= javascript_include_tag "all" %>
-    <script>hljs.initHighlightingOnLoad()</script>
+    <script>
+      hljs.initHighlightingOnLoad();
+
+      pre_tags = document.getElementsByTagName("pre");
+      for(i=0, len = pre_tags.length; i < len; i++) {
+        e = pre_tags[i];
+        lines = e.innerText.split('\n') || [];
+        var longest_line = "";
+        for(j=0, jlen = lines.length; j < jlen; j++) {
+          if(lines[j].length > longest_line.length) {
+            console.log(lines[j]);
+            console.log(lines[j].length);
+            longest_line = lines[j];
+          }
+        }
+        if(longest_line.length <= 83) {
+          e.getElementsByTagName('code')[0].classList.add('centered');
+        }
+      }
+    </script>
     <%#TODO: Add google analytics %>
   </body>
 </html>
