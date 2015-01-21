@@ -72,6 +72,7 @@ touch tmp/restart.txt # Will restart on next page load
 ```
 
 As usual, Rails handles much of the code reloading for you so you won't have to do this with every request. Just the typical reasons you'd need to restart the server for (modifying initializers, adding gems, modifying load paths, etc).
+
 - Since [pry](http://pryrepl.org) isn't connected to a tty, you won't be able to start a debugger from your code the normal way (`binding.pry`). [pry-remote](https://github.com/Mon-Ouie/pry-remote) has our back. Use `binding.remote_pry` in your code and then run `pry-remote`. This will attach your terminal to the pry debugging session.
 
 ```sh
