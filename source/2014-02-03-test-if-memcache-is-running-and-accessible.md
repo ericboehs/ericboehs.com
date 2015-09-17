@@ -23,10 +23,4 @@ But since we're writing a test which doesn't have memcache configured, we'll nee
 ActiveSupport::Cache.lookup_store(:mem_cache_store).stats.values.include? nil
 ```
 
-Or if you are writing it as a MiniTest spec:
-
-```ruby
-ActiveSupport::Cache.lookup_store(:mem_cache_store).stats.values.wont_include nil
-```
-
-So there ya go: quick and simple. If you have a better way that you like more, let us know via twitter ([@brightbit](https://twitter.com/brightbit)) or in the comments below.
+So there ya go: quick and simple.
