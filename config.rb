@@ -17,6 +17,7 @@ configure :build do
 end
 
 activate :blog do |blog|
+  blog.sources = ":year-:month-:day-:title.html"
   blog.permalink = ":year/:month/:day/:title"
 end
 
